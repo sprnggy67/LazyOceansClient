@@ -1,0 +1,66 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 50px;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.img-fill {
+  width: 100%;
+}
+
+.standard-cell {
+  background-color: lightgrey;
+}
+
+.img-margin {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.thumbnail-container {
+  position: relative;
+}
+
+.thumbnail-text {
+  z-index: 100;
+  position: absolute;
+  top: 0px;
+}
+
+.form-label {
+  display: inline-block;
+  width: 100px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,112 @@
+<div class="container">
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-8 thumbnail-container standard-cell">
+            <img class="img-responsive img-margin img-fill" src="http://dummyimage.com/600x300/cccccc/888888.png">
+            <div class="thumbnail-text">
+                <h2>Drift Away</h2>
+                <p>With cruises in every major destination around the world, you're just minutes away from a dream vacation.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h2>Search</h2>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="form-label">Destination:</label>
+                    <select class="form-control" name="destination">
+                        <option value="001">Alaska</option>
+                        <option value="002">Bahamas</option>
+                        <option value="003">Mediterranean</option>
+                        <option value="004">South Pacific</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date:</label>
+                    <input type="date" class="form-control" name="date">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Passengers:</label>
+                    <select class="form-control" name="passengers">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="form-label"></label>
+                    <button type="submit" class="btn btn-default">Find cruises</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row standard-cell" ng-if="featureOffer">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <h2>{{featureOffer.headline}}</h2>
+            <p>{{featureOffer.description}}</p>
+            <p class="cruise-from">From</p>
+            <p><span>{{featureOffer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
+            <p class="cruise-date">{{featureOffer.startDate}} to {{featureOffer.endDate}}</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-8">
+            <img class="img-responsive img-margin img-fill" ng-src="{{featureOffer.thumbnail}}">
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Destinations</h2>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 thumbnail-container standard-cell" ng-repeat="destination in destinations">
+                    <img class="img-responsive img-margin img-fill" ng-src="{{destination.thumbnail}}">
+                    <div class="thumbnail-text">
+                        <h3>{{destination.name}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h2>Special Offers</h2>
+            <div class="row">
+                <div class="col-xs-12" ng-repeat="offer in secondaryOffers">
+                    <h3>{{offer.headline}}</h3>
+                    <p>{{offer.description}}</p>
+                    <p class="cruise-from">From</p>
+                    <p><span>{{offer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
+                    <p class="cruise-date">{{offer.startDate}} to {{offer.endDate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Life on Board</h2>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 thumbnail-container standard-cell" ng-repeat="topic in lifeOnboardTopics">
+                    <img class="img-responsive img-margin img-fill" ng-src="{{topic.thumbnail}}">
+                    <div class="thumbnail-text">
+                        <h3>{{topic.name}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h2>Testimonials</h2>
+            <h3>Cruise Lover</h3>
+            <p>My husband and I had a fantastic time on our cruise.  The food was amazing, and every day...</p>
+            <p><a class="btn btn-default" href="#" role="button">Read more</a></p>
+        </div>
+    </div>
+
+</div>
+
+
