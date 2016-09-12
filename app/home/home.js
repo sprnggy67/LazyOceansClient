@@ -9,13 +9,18 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('HomeCtrl', ['$scope', 'lazyOceanServices', function($scope, lazyOceanServices) {
+.controller('HomeCtrl', ['$scope', '$location', 'lazyOceanServices', function($scope, $location, lazyOceanServices) {
 
   function init() {
     $scope.featureOffer = null;
     $scope.secondaryOffers = [];
     $scope.destinations = [];
     $scope.lifeOnboardTopics = [];
+    $scope.search = {
+      destinationId: "001",
+      startDate: null,
+      passengerCount: "2"
+    };
 
     lazyOceanServices.getSpecialOffers().then(function(specialOffers) {
       if (specialOffers.length > 0) {
@@ -39,6 +44,22 @@ angular.module('myApp.home', ['ngRoute'])
     }, function(reason) {
       alert('Failed' + reason);
     })
+
+    $scope.findCruises = function(search) {
+      $location.path('/search').search({
+        'destinationId' : search.destinationId,
+        'startDate' : Date.now(),
+        'passengerCount' : search.passengerCount
+      });
+    }
+
+    $scope.showDestination = function(destination) {
+      $location.path('/search').search({
+        'destinationId' : destination.id,
+        'startDate' : Date.now(),
+        'passengerCount' : '2'
+      });
+    }
   }
 
   init();

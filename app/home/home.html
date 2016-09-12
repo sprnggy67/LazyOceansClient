@@ -15,7 +15,7 @@
             <form class="form-inline">
                 <div class="form-group">
                     <label class="form-label">Destination:</label>
-                    <select class="form-control" name="destination">
+                    <select class="form-control" name="destination" ng-model="search.destinationId">
                         <option value="001">Alaska</option>
                         <option value="002">Bahamas</option>
                         <option value="003">Mediterranean</option>
@@ -24,11 +24,11 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Date:</label>
-                    <input type="date" class="form-control" name="date">
+                    <input type="date" class="form-control" name="date" ng-model="search.startDate">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Passengers:</label>
-                    <select class="form-control" name="passengers">
+                    <select class="form-control" name="passengers" ng-model="search.passengerCount">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -38,7 +38,7 @@
                 <br>
                 <div class="form-group">
                     <label class="form-label"></label>
-                    <button type="submit" class="btn btn-default">Find cruises</button>
+                    <button type="submit" class="btn btn-default" ng-click="findCruises(search)">Find cruises</button>
                 </div>
             </form>
         </div>
@@ -66,7 +66,8 @@
             <h2>Destinations</h2>
             <div class="row">
                 <div class="col-sm-6 col-lg-4 thumbnail-container standard-cell" ng-repeat="destination in destinations">
-                    <img class="img-responsive img-margin img-fill" ng-src="{{destination.thumbnail}}">
+                    <img class="img-responsive img-margin img-fill" ng-src="{{destination.thumbnail}}"
+                        ng-click="showDestination(destination)">
                     <div class="thumbnail-text">
                         <h3>{{destination.name}}</h3>
                     </div>

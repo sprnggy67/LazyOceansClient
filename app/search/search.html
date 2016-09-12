@@ -1,0 +1,57 @@
+<div class="container">
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Search</h2>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="form-label">Destination:</label>
+                    <select class="form-control" name="destination" ng-model="search.destinationId">
+                        <option value="001">Alaska</option>
+                        <option value="002">Bahamas</option>
+                        <option value="003">Mediterranean</option>
+                        <option value="004">South Pacific</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date:</label>
+                    <input type="date" class="form-control" name="date" ng-model="search.startDate">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Passengers:</label>
+                    <select class="form-control" name="passengers" ng-model="search.passengerCount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="form-label"></label>
+                    <button type="submit" class="btn btn-default" ng-click="findCruises(search)">Find cruises</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <h2>Search Results</h2>
+            <div class="row" ng-repeat="trip in trips">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <h3>{{trip.headline}}</h3>
+                    <p>{{trip.description}}</p>
+                    <p class="cruise-from">From</p>
+                    <p><span>{{trip.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
+                    <p class="cruise-date">{{trip.startDate}} to {{trip.endDate}}</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <img class="img-responsive img-margin img-fill" ng-src="{{trip.thumbnail}}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

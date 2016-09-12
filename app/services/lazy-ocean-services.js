@@ -36,6 +36,36 @@ angular.module('myApp').factory("lazyOceanServices", ['$http', function($http) {
             });
     };
 
+    service.getTrips = function(destinationId, startDate, passengerCount) {
+        var url = service.encodeUrl("http://localhost:3000/api/trips", {
+            "destinationId" : destinationId,
+            "startDate" : startDate,
+            "passengerCount" : passengerCount
+        });
+
+        return $http.get(url)
+            .then(function successCallback(response) {
+                return response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+                return response;
+            });
+    };
+
+    service.encodeUrl = function(url, dataObject) {
+        var dataArray = [];
+        for (var d in dataObject) {
+            if (dataObject[d]) {
+                dataArray.push(encodeURIComponent(d) + "=" + encodeURIComponent(dataObject[d]));
+            }
+        }
+        var result = url;
+        if (dataArray.length > 0) {
+            result += "?" + dataArray.join("&");
+        }
+        return result;
+    }
+
     return service;
 
 }]);
