@@ -2,7 +2,9 @@
  * Created by Dave on 2016-08-30.
  */
 
-angular.module('myApp').factory("lazyOceanServices", ['$http', function($http) {
+angular.module('myApp.services', [])
+
+.service("lazyOceanServices", ['$http', function($http) {
 
     var service = this;
 
