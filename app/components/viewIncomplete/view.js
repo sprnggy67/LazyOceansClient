@@ -4,7 +4,7 @@ angular.module('myApp.viewIncomplete', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/viewIncomplete', {
-    templateUrl: 'viewIncomplete/view.html',
+    templateUrl: 'components/viewIncomplete/view.html',
     controller: 'ViewIncompleteCtrl'
   });
 }])
