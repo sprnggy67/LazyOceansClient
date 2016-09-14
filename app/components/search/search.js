@@ -12,11 +12,12 @@ angular.module('myApp.search', ['ngRoute', 'myApp.services'])
 .controller('SearchCtrl', ['$scope', '$location', 'lazyOceanServices', function($scope, $location, lazyOceanServices) {
 
   function init() {
-    var search = $location.search();
 
+    // Extract the search parameters
+    var search = $location.search();
     var destinationId = search.destinationId;
-    var startDate = search.startDate;
     var passengerCount = search.passengerCount;
+    var startDate = lazyOceanServices.decodeDate(search.startDate);
 
     $scope.search = {
       destinationId: destinationId,
@@ -24,6 +25,7 @@ angular.module('myApp.search', ['ngRoute', 'myApp.services'])
       passengerCount: passengerCount
     };
 
+    // Get the search results.
     $scope.trips = [];
 
     $scope.findCruises = function(search) {

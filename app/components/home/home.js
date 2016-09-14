@@ -46,11 +46,17 @@ angular.module('myApp.home', ['ngRoute', 'myApp.services'])
     })
 
     $scope.findCruises = function(search) {
-      $location.path('/search').search({
+      // Generate the search query parameters.
+      var queryParameters = {
         'destinationId' : search.destinationId,
-        'startDate' : Date.now(),
         'passengerCount' : search.passengerCount
-      });
+      };
+      if (search.startDate) {
+        queryParameters.startDate = lazyOceanServices.encodeDate(search.startDate);
+      }
+
+      // Navigate to the search page.
+      $location.path('/search').search(queryParameters);
     }
 
     $scope.showDestination = function(destination) {
