@@ -19,6 +19,10 @@ angular.module('myApp.search', ['ngRoute', 'myApp.services'])
     var passengerCount = search.passengerCount;
     var startDate = lazyOceanServices.decodeDate(search.startDate);
 
+    if (!destinationId) {
+      destinationId = "001";
+    }
+
     $scope.search = {
       destinationId: destinationId,
       startDate: startDate,

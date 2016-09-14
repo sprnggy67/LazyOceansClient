@@ -60,10 +60,9 @@ angular.module('myApp.home', ['ngRoute', 'myApp.services'])
     }
 
     $scope.showDestination = function(destination) {
+      // Navigate to the search page.
       $location.path('/search').search({
         'destinationId' : destination.id,
-        'startDate' : Date.now(),
-        'passengerCount' : '2'
       });
     }
   }

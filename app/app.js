@@ -6,6 +6,7 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.services',
   'myApp.search',
+  'myApp.destinations',
   'myApp.view1',
   'myApp.view2',
   'myApp.viewIncomplete',

@@ -1,0 +1,19 @@
+<div class="container">
+
+    <br>
+
+    <h2>Destinations</h2>
+
+    <div class="row" ng-repeat="destination in destinations">
+        <div class="col-xs-12 col-sm-6 col-md-4" ng-click="showDestination(destination)">
+            <h2>{{destination.name}}</h2>
+            <p>{{destination.description}}</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-8" ng-click="showDestination(destination)">
+            <img class="img-responsive img-margin img-fill" ng-src="{{destination.thumbnail}}">
+        </div>
+    </div>
+
+</div>
+
+

@@ -12,7 +12,8 @@ module.exports = function(config) {
       'services*/*.js',
       'view*/*.js',
       'home*/*.js',
-      'search*/*.js'
+      'search*/*.js',
+      'destinations*/*.js'
     ],
 
     autoWatch: true,
