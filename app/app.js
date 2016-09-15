@@ -9,8 +9,7 @@ angular.module('myApp', [
   'myApp.destinations',
   'myApp.view1',
   'myApp.view2',
-  'myApp.viewIncomplete',
-  'myApp.version'
+  'myApp.viewIncomplete'
 ]).
 
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
