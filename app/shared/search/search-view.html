@@ -1,35 +1,41 @@
 <div class="search-div">
     <h2>Search</h2>
-    <form class="form-inline">
+    <form class="form-horizontal">
         <div class="form-group">
-            <label class="form-label">Destination:</label>
-            <select class="form-control" name="destination" ng-model="search.destinationId">
-                <option value="001">Alaska</option>
-                <option value="002">Bahamas</option>
-                <option value="003">Mediterranean</option>
-                <option value="004">South Pacific</option>
-                <option value="005">Transatlantic Routes</option>
-                <option value="006">Turks and Caicos</option>
-                <option value="007">India</option>
-            </select>
+            <label for="input1" class="col-sm-4 control-label">Destination</label>
+            <div class="col-sm-8">
+                <select id="input1" class="form-control" ng-model="search.destinationId">
+                    <option value="001">Alaska</option>
+                    <option value="002">Bahamas</option>
+                    <option value="003">Mediterranean</option>
+                    <option value="004">South Pacific</option>
+                    <option value="005">Transatlantic Routes</option>
+                    <option value="006">Turks and Caicos</option>
+                    <option value="007">India</option>
+                </select>
+            </div>
         </div>
         <div class="form-group">
-            <label class="form-label">Date:</label>
-            <input type="date" class="form-control" name="date" ng-model="search.startDate">
+            <label for="input2" class="col-sm-4 control-label">Date</label>
+            <div class="col-sm-8">
+                <input id="input2" type="date" class="form-control" ng-model="search.startDate">
+            </div>
         </div>
         <div class="form-group">
-            <label class="form-label">Passengers:</label>
-            <select class="form-control" name="passengers" ng-model="search.passengerCount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
+            <label for="input3" class="col-sm-4 control-label">Passengers</label>
+            <div class="col-sm-8">
+                <select id="input3" class="form-control" ng-model="search.passengerCount">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
         </div>
-        <br>
         <div class="form-group">
-            <label class="form-label"></label>
-            <button type="submit" class="btn btn-default" ng-click="findCruisesLocal(search)">Find cruises</button>
+            <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" class="btn btn-default" ng-click="findCruisesLocal(search)">Find cruises</button>
+            </div>
         </div>
     </form>
 </div>
