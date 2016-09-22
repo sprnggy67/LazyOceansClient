@@ -7,10 +7,11 @@
             <search-view search="search" on-find-cruises="findCruises(search)"/>
         </div>
         <div class="col-md-8">
-            <h2>Search Results</h2>
             <div class="row" ng-repeat="trip in trips">
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <h3>{{trip.headline}}</h3>
+                    <a href="#!/viewIncomplete">
+                        <h3>{{trip.headline}}</h3>
+                    </a>
                     <p>{{trip.description}}</p>
                     <p class="cruise-from">From</p>
                     <p><span>{{trip.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>

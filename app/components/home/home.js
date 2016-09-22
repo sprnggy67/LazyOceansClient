@@ -65,6 +65,10 @@ angular.module('myApp.home', ['ngRoute', 'myApp.services'])
         'destinationId' : destination.id,
       });
     }
+
+    $scope.showLifeOnBoardTopic = function(topic) {
+      $location.path('/viewIncomplete');
+    };
   }
 
   init();

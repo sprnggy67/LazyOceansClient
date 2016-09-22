@@ -37,10 +37,6 @@ body {
   width: 100%;
 }
 
-.standard-cell {
-  background-color: lightgrey;
-}
-
 .img-margin {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -50,10 +46,28 @@ body {
   position: relative;
 }
 
+.thumbnail-image {
+  cursor: pointer;
+}
+
 .thumbnail-text {
   z-index: 100;
   position: absolute;
   top: 0px;
+  padding:10px;
+  cursor: pointer;
+}
+
+.search-div {
+  margin-top: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
+  background-color: lightsteelblue;
+  background-clip: padding-box;
+}
+
+.search-div > h2 {
+  margin-top: 0px;
 }
 
 .form-label {
@@ -63,4 +77,18 @@ body {
 
 .form-control {
   margin-bottom: 10px;
+}
+
+.footer {
+  margin-top: 20px;
+  background-color: lightsteelblue;
+}
+
+.footer-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-column {
+  padding-left: 15px;
 }

@@ -3,7 +3,7 @@
     <br>
 
     <div class="row">
-        <div class="col-md-8 thumbnail-container standard-cell">
+        <div class="col-md-8 thumbnail-container">
             <img class="img-responsive img-margin img-fill" src="http://dummyimage.com/600x300/cccccc/888888.png">
             <div class="thumbnail-text">
                 <h2>Drift Away</h2>
@@ -17,13 +17,17 @@
 
     <br>
 
-    <div class="row standard-cell" ng-if="featureOffer">
+    <div class="row" ng-if="featureOffer">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <h2>{{featureOffer.headline}}</h2>
-            <p>{{featureOffer.description}}</p>
-            <p class="cruise-from">From</p>
-            <p><span>{{featureOffer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
-            <p class="cruise-date">{{featureOffer.startDate}} to {{featureOffer.endDate}}</p>
+            <div>
+                <a href="#!/viewIncomplete">
+                    <h2>{{featureOffer.headline}}</h2>
+                </a>
+                <p>{{featureOffer.description}}</p>
+                <p class="cruise-from">From</p>
+                <p><span>{{featureOffer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
+                <p class="cruise-date">{{featureOffer.startDate}} to {{featureOffer.endDate}}</p>
+            </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-8">
             <img class="img-responsive img-margin img-fill" ng-src="{{featureOffer.thumbnail}}">
@@ -36,9 +40,9 @@
         <div class="col-md-8">
             <h2>Destinations</h2>
             <div class="row">
-                <div class="col-sm-6 col-lg-4 thumbnail-container standard-cell" ng-repeat="destination in destinations">
-                    <img class="img-responsive img-margin img-fill" ng-src="{{destination.thumbnail}}"
-                        ng-click="showDestination(destination)">
+                <div class="col-sm-6 col-lg-4 thumbnail-container" ng-repeat="destination in destinations"
+                     ng-click="showDestination(destination)">
+                    <img class="img-responsive img-margin img-fill thumbnail-image" ng-src="{{destination.thumbnail}}">
                     <div class="thumbnail-text">
                         <h3>{{destination.name}}</h3>
                     </div>
@@ -49,7 +53,9 @@
             <h2>Special Offers</h2>
             <div class="row">
                 <div class="col-xs-12" ng-repeat="offer in secondaryOffers">
-                    <h3>{{offer.headline}}</h3>
+                    <a href="#!/viewIncomplete">
+                        <h3>{{offer.headline}}</h3>
+                    </a>
                     <p>{{offer.description}}</p>
                     <p class="cruise-from">From</p>
                     <p><span>{{offer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
@@ -63,8 +69,9 @@
         <div class="col-md-8">
             <h2>Life on Board</h2>
             <div class="row">
-                <div class="col-sm-6 col-lg-4 thumbnail-container standard-cell" ng-repeat="topic in lifeOnboardTopics">
-                    <img class="img-responsive img-margin img-fill" ng-src="{{topic.thumbnail}}">
+                <div class="col-sm-6 col-lg-4 thumbnail-container" ng-repeat="topic in lifeOnboardTopics"
+                     ng-click="showLifeOnBoardTopic(topic)">
+                    <img class="img-responsive img-margin img-fill thumbnail-image" ng-src="{{topic.thumbnail}}">
                     <div class="thumbnail-text">
                         <h3>{{topic.name}}</h3>
                     </div>
