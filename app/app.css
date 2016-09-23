@@ -89,6 +89,17 @@ body {
   margin-bottom: 20px;
 }
 
+.trip-price-left {
+}
+
+.trip-price-middle > p {
+  text-align: center;
+}
+
+.trip-price-right > p {
+  text-align: right;
+}
+
 #purchase-trip-room-radio {
   margin-top: 20px;
 }
