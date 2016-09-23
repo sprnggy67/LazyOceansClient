@@ -7,9 +7,10 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.search',
   'myApp.destinations',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.viewIncomplete'
+  'myApp.trip',
+  'myApp.purchaseTrip',
+  'myApp.viewIncomplete',
+  'mgo-angular-wizard'
 ]).
 
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

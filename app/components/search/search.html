@@ -9,7 +9,7 @@
         <div class="col-md-8">
             <div class="row" ng-repeat="trip in trips">
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a href="#!/viewIncomplete">
+                    <a href="#!/trip?tripId={{trip.id}}">
                         <h3>{{trip.headline}}</h3>
                     </a>
                     <p>{{trip.description}}</p>

@@ -38,6 +38,22 @@ angular.module('myApp.services', [])
             });
     };
 
+    service.getTrip = function(tripId) {
+        var queryParameters = {
+            "tripId" : tripId,
+        };
+
+        var url = service.encodeUrl("http://localhost:3000/api/trips", queryParameters);
+
+        return $http.get(url)
+            .then(function successCallback(response) {
+                return response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+                return response;
+            });
+    };
+
     service.getTrips = function(destinationId, startDate, passengerCount) {
         var queryParameters = {
             "destinationId" : destinationId,

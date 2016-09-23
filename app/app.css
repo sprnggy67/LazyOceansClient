@@ -83,3 +83,12 @@ body {
 .footer-column {
   padding-left: 15px;
 }
+
+.wizard-heading {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#purchase-trip-room-radio {
+  margin-top: 20px;
+}

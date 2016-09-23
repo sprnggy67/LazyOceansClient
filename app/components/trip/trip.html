@@ -1,0 +1,21 @@
+<div class="container">
+
+    <br>
+
+    <div class="row" ng-if="featureOffer">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div>
+                <h2>{{featureOffer.headline}}</h2>
+                <p>{{featureOffer.description}}</p>
+                <p class="cruise-from">From</p>
+                <p><span>{{featureOffer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
+                <p class="cruise-date">{{featureOffer.startDate}} to {{featureOffer.endDate}}</p>
+                <p><a class="btn btn-primary" href="#!/purchaseTrip?tripId={{featureOffer.id}}" role="button">Get a Quote</a></p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-8">
+            <img class="img-responsive img-margin img-fill" ng-src="{{featureOffer.thumbnail}}">
+        </div>
+    </div>
+
+</div>

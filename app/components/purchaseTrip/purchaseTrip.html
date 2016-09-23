@@ -1,0 +1,181 @@
+<div class="container">
+
+    <br>
+
+    <h2>Get a Quote for a {{trip.headline}}</h2>
+
+    <div class="row">
+        <wizard class="col-xs-12" indicators-position="top" on-finish="finishedWizard()">
+            <wz-step wz-title="Start">
+                <br>
+                <h3 class="wizard-heading">What are you looking for?</h3>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="input1" class="col-sm-4 control-label">Number of Passengers</label>
+                        <div class="col-sm-4">
+                            <select id="input1" class="form-control" ng-model="purchaseData.passengerCount">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input2" class="col-sm-4 control-label">Number of Rooms</label>
+                        <div class="col-sm-4">
+                            <select id="input2" class="form-control" ng-model="purchaseData.roomCount">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <input type="submit" class="btn btn-primary" wz-next value="Next" />
+                        </div>
+                    </div>
+                </form>
+            </wz-step>
+            <wz-step wz-title="Room Type">
+                <br>
+                <h3 class="wizard-heading">Select a room type</h3>
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div id="purchase-trip-room-radio" class="col-sm-offset-1 col-sm-3">
+                            <div class="radio">
+                                <label><input type="radio" value="interior" ng-model="purchaseData.roomType">Interior</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" value="seaside" ng-model="purchaseData.roomType">Seaside</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" value="seasideBalcony" ng-model="purchaseData.roomType">Seaside Balcony</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" value="seasideSuite" ng-model="purchaseData.roomType">Seaside Suite</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 thumbnail-container">
+                            <img class="img-responsive img-margin img-fill" src="http://dummyimage.com/600x300/cccccc/888888.png">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <input type="submit" class="btn btn-primary" wz-next value="Next" />
+                        </div>
+                    </div>
+                </form>
+            </wz-step>
+            <wz-step wz-title="Passenger Information">
+                <br>
+                <h3 class="wizard-heading">Enter your passenger information</h3>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="fullName" class="col-sm-4 control-label">Full name</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="fullName" placeholder="Jane Doe" ng-model="purchaseData.fullName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress" class="col-sm-4 control-label">Email address</label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control" id="emailAddress" placeholder="jane.doe@example.com" ng-model="purchaseData.emailAddress">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="col-sm-4 control-label">Country of Residence</label>
+                        <div class="col-sm-4">
+                            <select id="country" class="form-control" ng-model="purchaseData.country">
+                                <option value="CA">Canada</option>
+                                <option value="IN">India</option>
+                                <option value="US">United Kingdom</option>
+                                <option value="UK">United States</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mailingAddress" class="col-sm-4 control-label">Address</label>
+                        <div class="col-sm-4">
+                            <textarea class="col-sm-4 form-control" rows="3" id="mailingAddress" ng-model="purchaseData.mailingAddress">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="province" class="col-sm-4 control-label">Province</label>
+                        <div class="col-sm-4">
+                            <select id="province" class="form-control" ng-model="purchaseData.province">
+                                <option value="BC">British Columnbia</option>
+                                <option value="NS">Nova Scotia</option>
+                                <option value="ON">Ontario</option>
+                                <option value="PQ">Quebec</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalZip" class="col-sm-4 control-label">Postal Code</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="col-sm-4 form-control" id="postalZip" ng-model="purchaseData.postalCode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <input type="submit" class="btn btn-primary" wz-next value="Next" />
+                        </div>
+                    </div>
+                </form>
+            </wz-step>
+            <wz-step wz-title="Review">
+                <br>
+                <h3>Review your booking</h3>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="fullName" class="col-sm-4 control-label">Full name</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-static">{{purchaseData.fullName}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress" class="col-sm-4 control-label">Email address</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-static">{{purchaseData.emailAddress}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName" class="col-sm-4 control-label">Passenger count</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-static">{{purchaseData.passengerCount}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress" class="col-sm-4 control-label">Room count</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-static">{{purchaseData.roomCount}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress" class="col-sm-4 control-label">Room type</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-static">{{purchaseData.roomType}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress" class="col-sm-4 control-label">Total cost</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-static">$7477.99</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <input type="submit" class="btn btn-primary" wz-next value="Buy it now" />
+                        </div>
+                    </div>
+                </form>
+            </wz-step>
+        </wizard>
+    </div>
+</div>
+
+

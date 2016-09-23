@@ -20,7 +20,7 @@
     <div class="row" ng-if="featureOffer">
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div>
-                <a href="#!/viewIncomplete">
+                <a href="#!/trip?tripId={{featureOffer.id}}">
                     <h2>{{featureOffer.headline}}</h2>
                 </a>
                 <p>{{featureOffer.description}}</p>
@@ -53,7 +53,7 @@
             <h2>Special Offers</h2>
             <div class="row">
                 <div class="col-xs-12" ng-repeat="offer in secondaryOffers">
-                    <a href="#!/viewIncomplete">
+                    <a href="#!/trip?tripId={{offer.id}}">
                         <h3>{{offer.headline}}</h3>
                     </a>
                     <p>{{offer.description}}</p>
