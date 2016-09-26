@@ -14,7 +14,8 @@ module.exports = function(config) {
       'search*/*.js',
       'destinations*/*.js',
       'trip*/*.js',
-      'purchaseTrip*/*.js',
+      'getTripQuote*/*.js',
+      'bookingConfirmation*/*.js',
     ],
 
     autoWatch: true,

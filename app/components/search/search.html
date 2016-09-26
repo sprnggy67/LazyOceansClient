@@ -14,8 +14,9 @@
                     </a>
                     <p>{{trip.description}}</p>
                     <p class="cruise-from">From</p>
-                    <p><span>{{trip.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
-                    <p class="cruise-date">{{trip.startDate}} to {{trip.endDate}}</p>
+                    <p><span class="price">{{trip.startingPrice | currency }}</span> <span>for two</span></p>
+                    <p><span class="big-savings">Save 33%</span></p>
+                    <p class="cruise-date">{{trip.startDate | date }} to {{trip.endDate | date }}</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-8">
                     <img class="img-responsive img-margin img-fill" ng-src="{{trip.thumbnail}}">

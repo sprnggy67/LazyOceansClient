@@ -39,11 +39,7 @@ angular.module('myApp.services', [])
     };
 
     service.getTrip = function(tripId) {
-        var queryParameters = {
-            "tripId" : tripId,
-        };
-
-        var url = service.encodeUrl("http://localhost:3000/api/trips", queryParameters);
+        var url = "http://localhost:3000/api/trips/" + tripId;
 
         return $http.get(url)
             .then(function successCallback(response) {
@@ -57,10 +53,8 @@ angular.module('myApp.services', [])
     service.getTrips = function(destinationId, startDate, passengerCount) {
         var queryParameters = {
             "destinationId" : destinationId,
-            "passengerCount" : passengerCount
-        };
-        if (startDate) {
-            queryParameters.startDate = service.encodeDate(startDate);
+            "passengerCount" : passengerCount,
+            "startDate": service.encodeDate(startDate)
         }
 
         var url = service.encodeUrl("http://localhost:3000/api/trips", queryParameters);
@@ -73,6 +67,30 @@ angular.module('myApp.services', [])
                 return response;
             });
     };
+
+    service.getBooking = function(bookingId) {
+        var url = "http://localhost:3000/api/bookings/" + bookingId;
+
+        return $http.get(url)
+            .then(function successCallback(response) {
+                return response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+                return response;
+            });
+    };
+
+    service.createBooking = function(bookingData) {
+        var url = "http://localhost:3000/api/bookings";
+
+        return $http.post(url, bookingData)
+            .then(function successCallback(response) {
+                return response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+                return response;
+            });
+    }
 
     service.encodeDate = function(date) {
         if (date) {

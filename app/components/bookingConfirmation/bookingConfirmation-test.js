@@ -1,17 +1,17 @@
 'use strict';
 
-describe('myApp.purchaseTrip module', function() {
+describe('myApp.bookingConfirmation module', function() {
 
-  beforeEach(module('myApp.purchaseTrip'));
+  beforeEach(module('myApp.bookingConfirmation'));
 
-  describe('purchaseTrip controller', function(){
+  describe('bookingConfirmation controller', function(){
 
     var scope;
     var controller;
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      controller = $controller('PurchaseTripCtrl', {$scope: scope});
+      controller = $controller('BookingConfirmationCtrl', {$scope: scope});
     }));
 
 

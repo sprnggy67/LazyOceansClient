@@ -25,8 +25,8 @@
                 </a>
                 <p>{{featureOffer.description}}</p>
                 <p class="cruise-from">From</p>
-                <p><span>{{featureOffer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
-                <p class="cruise-date">{{featureOffer.startDate}} to {{featureOffer.endDate}}</p>
+                <p><span class="price">{{featureOffer.startingPrice | currency }}</span> <span>for two</span> <span class="savings">Save 33%</span></p>
+                <p class="cruise-date">{{featureOffer.startDate | date}} to {{featureOffer.endDate | date}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-8">
@@ -58,8 +58,8 @@
                     </a>
                     <p>{{offer.description}}</p>
                     <p class="cruise-from">From</p>
-                    <p><span>{{offer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
-                    <p class="cruise-date">{{offer.startDate}} to {{offer.endDate}}</p>
+                    <p><span class="price">{{offer.startingPrice | currency }}</span> <span>for two</span> <span class="savings">Save 33%</span></p>
+                    <p class="cruise-date">{{offer.startDate | date }} to {{offer.endDate | date }}</p>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
             <h2>Testimonials</h2>
             <h3>Cruise Lover</h3>
             <p>My husband and I had a fantastic time on our cruise.  The food was amazing, and every day...</p>
-            <p><a class="btn btn-default" href="#" role="button">Read more</a></p>
+            <p><a class="btn btn-default" href="#!/viewIncomplete" role="button">Read more</a></p>
         </div>
     </div>
 

@@ -8,9 +8,9 @@
                 <h2>{{featureOffer.headline}}</h2>
                 <p>{{featureOffer.description}}</p>
                 <p class="cruise-from">From</p>
-                <p><span>{{featureOffer.startingPrice}}</span> <span>for two</span> <span>Save 33%</span></p>
-                <p class="cruise-date">{{featureOffer.startDate}} to {{featureOffer.endDate}}</p>
-                <p><a class="btn btn-primary" href="#!/purchaseTrip?tripId={{featureOffer.id}}" role="button">Get a Quote</a></p>
+                <p><span class="price">{{featureOffer.startingPrice | currency }}</span> <span>for two</span> <span class="savings">Save 33%</span></p>
+                <p class="cruise-date">{{featureOffer.startDate | date}} to {{featureOffer.endDate | date}}</p>
+                <p><a class="btn btn-primary" href="#!/getTripQuote?tripId={{featureOffer.id}}" role="button">Get a Quote</a></p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-8">
@@ -91,7 +91,7 @@
 
     <div class="row" ng-if="featureOffer">
         <div class="col-sm-4">
-            <div class="trip-price-left">
+            <div>
                 <h3>Your ship</h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim vulputate tortor ut elementum. Duis sit amet quam sagittis, dictum ex quis, lobortis tortor.

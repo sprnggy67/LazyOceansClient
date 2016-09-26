@@ -5,7 +5,7 @@
     <h2>Get a Quote for a {{trip.headline}}</h2>
 
     <div class="row">
-        <wizard class="col-xs-12" indicators-position="top" on-finish="finishedWizard()">
+        <wizard class="col-xs-12" indicators-position="top" on-finish="finishWizard()">
             <wz-step wz-title="Start">
                 <br>
                 <h3 class="wizard-heading">What are you looking for?</h3>
@@ -13,7 +13,7 @@
                     <div class="form-group">
                         <label for="input1" class="col-sm-4 control-label">Number of Passengers</label>
                         <div class="col-sm-4">
-                            <select id="input1" class="form-control" ng-model="purchaseData.passengerCount">
+                            <select id="input1" class="form-control" ng-model="bookingData.passengerCount">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -24,7 +24,7 @@
                     <div class="form-group">
                         <label for="input2" class="col-sm-4 control-label">Number of Rooms</label>
                         <div class="col-sm-4">
-                            <select id="input2" class="form-control" ng-model="purchaseData.roomCount">
+                            <select id="input2" class="form-control" ng-model="bookingData.roomCount">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -46,16 +46,16 @@
                     <div class="row">
                         <div id="purchase-trip-room-radio" class="col-sm-offset-1 col-sm-3">
                             <div class="radio">
-                                <label><input type="radio" value="interior" ng-model="purchaseData.roomType">Interior</label>
+                                <label><input type="radio" value="interior" ng-model="bookingData.roomType">Interior</label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" value="seaside" ng-model="purchaseData.roomType">Seaside</label>
+                                <label><input type="radio" value="seaside" ng-model="bookingData.roomType">Seaside</label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" value="seasideBalcony" ng-model="purchaseData.roomType">Seaside Balcony</label>
+                                <label><input type="radio" value="seasideBalcony" ng-model="bookingData.roomType">Seaside Balcony</label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" value="seasideSuite" ng-model="purchaseData.roomType">Seaside Suite</label>
+                                <label><input type="radio" value="seasideSuite" ng-model="bookingData.roomType">Seaside Suite</label>
                             </div>
                         </div>
                         <div class="col-sm-8 thumbnail-container">
@@ -76,19 +76,19 @@
                     <div class="form-group">
                         <label for="fullName" class="col-sm-4 control-label">Full name</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="fullName" placeholder="Jane Doe" ng-model="purchaseData.fullName">
+                            <input type="text" class="form-control" id="fullName" placeholder="Jane Doe" ng-model="bookingData.fullName">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="emailAddress" class="col-sm-4 control-label">Email address</label>
                         <div class="col-sm-4">
-                            <input type="email" class="form-control" id="emailAddress" placeholder="jane.doe@example.com" ng-model="purchaseData.emailAddress">
+                            <input type="email" class="form-control" id="emailAddress" placeholder="jane.doe@example.com" ng-model="bookingData.emailAddress">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="country" class="col-sm-4 control-label">Country of Residence</label>
                         <div class="col-sm-4">
-                            <select id="country" class="form-control" ng-model="purchaseData.country">
+                            <select id="country" class="form-control" ng-model="bookingData.country">
                                 <option value="CA">Canada</option>
                                 <option value="IN">India</option>
                                 <option value="US">United Kingdom</option>
@@ -99,14 +99,14 @@
                     <div class="form-group">
                         <label for="mailingAddress" class="col-sm-4 control-label">Address</label>
                         <div class="col-sm-4">
-                            <textarea class="col-sm-4 form-control" rows="3" id="mailingAddress" ng-model="purchaseData.mailingAddress">
+                            <textarea class="col-sm-4 form-control" rows="3" id="mailingAddress" ng-model="bookingData.streetAddress">
                             </textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="province" class="col-sm-4 control-label">Province</label>
                         <div class="col-sm-4">
-                            <select id="province" class="form-control" ng-model="purchaseData.province">
+                            <select id="province" class="form-control" ng-model="bookingData.province">
                                 <option value="BC">British Columnbia</option>
                                 <option value="NS">Nova Scotia</option>
                                 <option value="ON">Ontario</option>
@@ -117,7 +117,7 @@
                     <div class="form-group">
                         <label for="postalZip" class="col-sm-4 control-label">Postal Code</label>
                         <div class="col-sm-4">
-                            <input type="text" class="col-sm-4 form-control" id="postalZip" ng-model="purchaseData.postalCode">
+                            <input type="text" class="col-sm-4 form-control" id="postalZip" ng-model="bookingData.postalCode">
                         </div>
                     </div>
                     <div class="form-group">
@@ -134,31 +134,31 @@
                     <div class="form-group">
                         <label for="fullName" class="col-sm-4 control-label">Full name</label>
                         <div class="col-sm-4">
-                            <p class="form-control-static">{{purchaseData.fullName}}</p>
+                            <p class="form-control-static">{{bookingData.fullName}}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="emailAddress" class="col-sm-4 control-label">Email address</label>
                         <div class="col-sm-4">
-                            <p class="form-control-static">{{purchaseData.emailAddress}}</p>
+                            <p class="form-control-static">{{bookingData.emailAddress}}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="fullName" class="col-sm-4 control-label">Passenger count</label>
                         <div class="col-sm-4">
-                            <p class="form-control-static">{{purchaseData.passengerCount}}</p>
+                            <p class="form-control-static">{{bookingData.passengerCount}}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="emailAddress" class="col-sm-4 control-label">Room count</label>
                         <div class="col-sm-4">
-                            <p class="form-control-static">{{purchaseData.roomCount}}</p>
+                            <p class="form-control-static">{{bookingData.roomCount}}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="emailAddress" class="col-sm-4 control-label">Room type</label>
                         <div class="col-sm-4">
-                            <p class="form-control-static">{{purchaseData.roomType}}</p>
+                            <p class="form-control-static">{{bookingData.roomType}}</p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -170,6 +170,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-4">
                             <input type="submit" class="btn btn-primary" wz-next value="Buy it now" />
+                            <a href="#" class="btn btn-link" role="button">Keep browsing</a>
                         </div>
                     </div>
                 </form>

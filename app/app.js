@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.search',
   'myApp.destinations',
   'myApp.trip',
-  'myApp.purchaseTrip',
+  'myApp.getTripQuote',
+  'myApp.bookingConfirmation',
   'myApp.viewIncomplete',
   'mgo-angular-wizard'
 ]).

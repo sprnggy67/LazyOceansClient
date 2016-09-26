@@ -90,16 +90,41 @@ body {
 }
 
 .trip-price-left {
+  font-weight: bold;
 }
 
 .trip-price-middle > p {
+  font-weight: bold;
   text-align: center;
 }
 
 .trip-price-right > p {
+  font-weight: bold;
   text-align: right;
 }
 
 #purchase-trip-room-radio {
   margin-top: 20px;
+}
+
+.booking-id {
+  font-weight: bold;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.savings {
+  font-weight: bold;
+  color:red;
+  margin-left: 20px;
+  font-size: 125%;
+}
+
+.big-savings {
+  font-weight: bold;
+  font-size: 125%;
+  color:red;
 }
